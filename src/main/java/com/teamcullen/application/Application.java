@@ -1,4 +1,4 @@
-package src.main.com.teamcullen.application;
+package com.teamcullen.application;
 
 public class Application {
 }

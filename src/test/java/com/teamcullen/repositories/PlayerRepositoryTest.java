@@ -1,4 +1,4 @@
 package com.teamcullen.repositories;
 
-public class PlayerRepository {
+public class PlayerRepositoryTest {
 }

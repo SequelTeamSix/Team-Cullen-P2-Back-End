@@ -1,4 +1,4 @@
-package src.main.com.teamcullen.repositories;
+package com.teamcullen.repositories;
 
 public class CardRepository {
 }

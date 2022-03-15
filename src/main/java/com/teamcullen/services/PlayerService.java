@@ -1,4 +1,4 @@
-package src.main.com.teamcullen.services;
+package com.teamcullen.services;
 
 public class PlayerService {
 }

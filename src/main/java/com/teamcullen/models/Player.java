@@ -1,4 +1,4 @@
-package src.main.com.teamcullen.models;
+package com.teamcullen.models;
 
 public class Player {
 }
