@@ -1,4 +1,4 @@
-package src.test.java.com.teamcullen.services;
+package com.teamcullen.services;
 
 public class CardServiceTest {
 }

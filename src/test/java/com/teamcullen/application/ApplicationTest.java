@@ -1,4 +1,4 @@
-package src.test.java.com.teamcullen.application;
+package com.teamcullen.application;
 
 public class ApplicationTest {
 }
