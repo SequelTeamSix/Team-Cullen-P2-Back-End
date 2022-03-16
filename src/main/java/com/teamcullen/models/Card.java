@@ -4,25 +4,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "Card")
+@Table(name = "cards")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Card {
     @Id
-    private int cardId;
-    @Column
-    private String name;
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "card_id")
+    private int card_id;
+    @Column(name = "card_name")
+    private String card_name;
+    @Column(name = "power")
     private int power;
-    @Column
-    private String imageURL;
-    @Column
+    @Column(name = "image_url")
+    private String image_url;
+    @Column(name = "rarity")
     private int rarity;
 }
