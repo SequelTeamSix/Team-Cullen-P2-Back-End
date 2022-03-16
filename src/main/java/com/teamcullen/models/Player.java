@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -34,6 +35,14 @@ public class Player {
 
     @Column(name = "loses")
     private int loses;
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "player_deck",
+            joinColumns = {@JoinColumn(name = "player_id")},
+            inverseJoinColumns = {@JoinColumn(name = "game_id")}
+    )
+    private Set<Card> playerDeck;
 
 
 
