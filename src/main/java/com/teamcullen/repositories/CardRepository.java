@@ -15,19 +15,22 @@ public interface CardRepository extends JpaRepository<Card, Integer> {
     @Query("FROM Card")
     List<Card> getAllCards();
 
-    @Query("FROM Card where power = :power")
+    @Query("FROM Card WHERE power = :power")
     List<Card> getAllCardsByPower(int power);
 
-    @Query("FROM Card where card_name = :card_name")
+    @Query("FROM Card WHERE card_name = :card_name")
     Card getCardByName(String card_name);
 
-    @Query("FROM Card where card_id = :card_id")
+    @Query("FROM Card WHERE card_id = :card_id")
     Card getCardById(int card_id);
 
-    @Query("FROM Card where power <= :power_high AND power >= :power_low")
+    @Query("FROM Card WHERE power <= :power_high AND power >= :power_low")
     List<Card> getAllCardsBetweenPowerLevels(int power_low, int power_high);
 
+    @Query("FROM Card WHERE rarity = :rarity")
+    List<Card> getAllCardsByRarity(int rarity);
+
     @Modifying
-    @Query("DELETE from Card c where c.card_id = :card_id")
+    @Query("DELETE FROM Card c WHERE c.card_id = :card_id")
     int deleteCardById(int card_id);
 }

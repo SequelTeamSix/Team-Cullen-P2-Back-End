@@ -34,6 +34,12 @@ public class CardController {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/card/rarity/{rarity}")
+    public List<Card> getAllCardsByRarity(@PathVariable int rarity) {
+        return cardService.getAllCardsByRarity(rarity);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/card/power/{power}")
     public List<Card> getAllCardsByPower(@PathVariable int power) {
         return cardService.getAllCardsByPower(power);
