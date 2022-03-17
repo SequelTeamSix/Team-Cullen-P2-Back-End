@@ -34,7 +34,6 @@ public class PlayerController {
         return playerService.getPlayersByWins();
     }
 
-
     @PostMapping("/player/add")
     public Player createPlayer(@RequestBody Player player){
 

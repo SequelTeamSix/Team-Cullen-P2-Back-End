@@ -40,7 +40,7 @@ public class Player {
     @JoinTable(
             name = "player_deck",
             joinColumns = {@JoinColumn(name = "player_id")},
-            inverseJoinColumns = {@JoinColumn(name = "game_id")}
+            inverseJoinColumns = {@JoinColumn(name = "card_id")}
     )
     private Set<Card> playerDeck;
 
