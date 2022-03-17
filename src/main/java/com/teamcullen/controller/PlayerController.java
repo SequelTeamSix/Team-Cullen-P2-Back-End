@@ -29,10 +29,10 @@ public class PlayerController {
 
         return playerService.getPlayerByName(username);  }
 
-//    @GetMapping("/player/leaderboard")
-//    public List<Player> getPlayersByWins(){
-//        return playerService.getPlayersByWins();
-//    }
+    @GetMapping("/player/leaderboard")
+    public List<Player> getPlayersByWins(){
+        return playerService.getPlayersByWins();
+    }
 
     @PostMapping("/player/add")
     public Player createPlayer(@RequestBody Player player){

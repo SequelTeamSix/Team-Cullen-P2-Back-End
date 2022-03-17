@@ -31,9 +31,13 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
     @Query("Delete from Player p where p.player_id = :player_id")
     void deletePlayerById(int player_id);
 
-//    @Query("From Player order by wins desc  5")
-//    List<Player> getPlayersByWins();
 
+
+   @Query(value = "Select top 5* from players order by wins desc", nativeQuery = true)
+   List<Player> getPlayersByWins();
+
+
+    //List<Player> findTop5ByWins(int wins);
 
 
 

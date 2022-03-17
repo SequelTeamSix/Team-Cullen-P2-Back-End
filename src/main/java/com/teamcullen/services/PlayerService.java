@@ -35,10 +35,10 @@ public class PlayerService {
 
         return playerRepository.getPlayerByName(username);  }
 
-//    public List<Player> getPlayersByWins(){
-//
-//        return playerRepository.getPlayersByWins();
-//    }
+    public List<Player> getPlayersByWins(){
+
+        return playerRepository.getPlayersByWins();
+    }
 
     public Player createPlayer(Player player){
 
