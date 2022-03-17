@@ -30,6 +30,11 @@ public class CardController {
         return cardService.getAllCards();
     }
 
+    @GetMapping("/card/rarity/{rarity}")
+    public List<Card> getAllCardsByRarity(@PathVariable int rarity) {
+        return cardService.getAllCardsByRarity(rarity);
+    }
+
     @GetMapping("/card/power/{power}")
     public List<Card> getAllCardsByPower(@PathVariable int power) {
         return cardService.getAllCardsByPower(power);

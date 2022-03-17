@@ -42,6 +42,10 @@ public class CardService {
         return cardRepository.getAllCardsBetweenPowerLevels(power_low, power_high);
     }
 
+    public List<Card> getAllCardsByRarity(int rarity) {
+        return cardRepository.getAllCardsByRarity(rarity);
+    }
+
     public int deleteCardById(int card_id) {
         return cardRepository.deleteCardById(card_id);
     }
