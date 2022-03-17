@@ -31,5 +31,4 @@ public class OwnedCards {
     public Player player;
     @Column
     public int quantitiy;
-
 }

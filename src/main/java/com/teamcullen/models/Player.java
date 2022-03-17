@@ -35,18 +35,4 @@ public class Player {
 
     @Column(name = "loses")
     private int loses;
-
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(
-            name = "player_deck",
-            joinColumns = {@JoinColumn(name = "player_id")},
-            inverseJoinColumns = {@JoinColumn(name = "card_id")}
-    )
-    private Set<Card> playerDeck;
-
-
-
-
-
-
 }
