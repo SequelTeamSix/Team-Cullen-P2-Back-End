@@ -1,4 +1,4 @@
-package com.teamcullen.application;
+package com.teamcullen;
 
 import com.teamcullen.models.Card;
 import com.teamcullen.models.OwnedCards;
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan(basePackageClasses = {Card.class, OwnedCards.class, Player.class})
+//@EntityScan(basePackageClasses = {Card.class, OwnedCards.class, Player.class})
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
