@@ -2,6 +2,7 @@ package com.teamcullen.repositories;
 
 import com.teamcullen.models.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -27,7 +28,7 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
 
     Player save(Player player);
 
-
+    @Modifying
     @Query("Delete from Player p where p.player_id = :player_id")
     void deletePlayerById(int player_id);
 
