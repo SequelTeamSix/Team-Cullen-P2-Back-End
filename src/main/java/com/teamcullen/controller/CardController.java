@@ -65,7 +65,7 @@ public class CardController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/card/update/{card_id}")
-    public Card updateModifierById(@PathVariable int card_id, @RequestBody Card card) {
+    public Card updateCardById(@PathVariable int card_id, @RequestBody Card card) {
         return cardService.updateCard(card_id, card);
     }
 }

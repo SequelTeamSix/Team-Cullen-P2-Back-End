@@ -1,6 +1,5 @@
 package com.teamcullen.controller;
 
-import com.teamcullen.models.Card;
 import com.teamcullen.models.PlayerDeck;
 import com.teamcullen.services.DeckService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import java.util.List;
 
 @RestController
 public class DeckController {
-
     DeckService deckService;
 
     @Autowired
@@ -25,7 +23,6 @@ public class DeckController {
 
         return deckService.getAllDecks();
     }
-
 
     //gets all PlayerDeck objects related to a player id
     @CrossOrigin(origins = "http://localhost:3000")
@@ -42,8 +39,6 @@ public class DeckController {
 
         return deckService.getById(rel_id);
     }
-
-
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/deck/add")
@@ -64,9 +59,4 @@ public class DeckController {
 
         deckService.deleteById(rel_id);
     }
-
-
-
-
-
 }
