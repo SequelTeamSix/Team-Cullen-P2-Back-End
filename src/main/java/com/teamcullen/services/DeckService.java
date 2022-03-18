@@ -26,7 +26,7 @@ public class DeckService {
     }
 
 
-    //gets PlayerDeck object of a given rel_id
+
     public PlayerDeck updateDeck(int rel_id, PlayerDeck playerDeck){
 
         PlayerDeck dbDeck = deckRepository.getById(rel_id);
@@ -46,7 +46,7 @@ public class DeckService {
 
         return deckRepository.getDeckById(player_id);
     }
-
+    //gets PlayerDeck object of a given rel_id
     public PlayerDeck getById(int rel_id){
 
         return deckRepository.getById(rel_id);

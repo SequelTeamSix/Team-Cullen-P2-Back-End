@@ -42,7 +42,7 @@ public class DeckController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/deck/add")
-        public PlayerDeck saveDeck(PlayerDeck playerDeck){
+        public PlayerDeck saveDeck(@RequestBody PlayerDeck playerDeck){
         return deckService.saveDeck(playerDeck);
         }
 

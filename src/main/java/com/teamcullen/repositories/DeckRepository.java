@@ -23,7 +23,7 @@ List<PlayerDeck> getAllDecks();
 
     //gets all PlayerDeck objects related to a player id
 @Query("From PlayerDeck Where player_id = :player_id")
-    List<PlayerDeck> getDeckById(@Param("player_id") int player_id);
+    List<PlayerDeck> getDeckById( int player_id);
 
 
     //gets PlayerDeck object of a given rel_id

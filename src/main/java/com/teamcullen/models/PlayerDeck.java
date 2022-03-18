@@ -18,10 +18,10 @@ public class PlayerDeck {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "rel_id")
     private int rel_id;
-    @ManyToOne(fetch=FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToOne(fetch=FetchType.EAGER, cascade = {CascadeType.MERGE})
     @JoinColumn(name = "card_id")
     public Card card;
-    @ManyToOne(fetch=FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToOne(fetch=FetchType.EAGER, cascade = {CascadeType.MERGE})
     @JoinColumn(name = "player_id")
     public Player player;
 }
