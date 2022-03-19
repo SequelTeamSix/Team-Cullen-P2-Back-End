@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
@@ -75,18 +74,33 @@ class DeckControllerTest {
 
     @Test
     void testSaveDeck() {
-        when(deckService.saveDeck(any())).thenReturn(new PlayerDeck(0, new Card(0, "test", 0, "test", 0), new Player(0, "username", "password", 0, 0, 0)));
+        PlayerDeck savedDeck = new PlayerDeck(0,
+                new Card(0, "test", 0, "test", 0),
+                new Player(0, "username", "password", 0, 0, 0));
+        when(deckService.saveDeck(any())).thenReturn(savedDeck);
 
-        PlayerDeck result = deckController.saveDeck(new PlayerDeck(0, new Card(0, "test", 0, "test", 0), new Player(0, "username", "password", 0, 0, 0)));
-        Assertions.assertEquals(new PlayerDeck(0, new Card(0, "test", 0, "test", 0), new Player(0, "username", "password", 0, 0, 0)), result);
+        PlayerDeck result = deckController.saveDeck(new PlayerDeck(0,
+                new Card(0, "test", 0, "test", 0),
+                new Player(0, "username", "password", 0, 0, 0)));
+        Assertions.assertEquals(savedDeck, result);
     }
 
     @Test
     void testUpdateDeck() {
-        when(deckService.updateDeck(1, any())).thenReturn(new PlayerDeck(1, new Card(0, "test", 0, "test", 0), new Player(0, "username", "password", 0, 0, 0)));
+        PlayerDeck updatedDeck = new PlayerDeck(1,
+                new Card(0, "test", 0, "test", 0),
+                new Player(0, "username", "password",0, 0, 0));
+        when(deckService.updateDeck(1,
+                new PlayerDeck(0,
+                        new Card(0, "test", 0, "test", 0),
+                        new Player(0, "username", "password", 0, 0, 0))))
+                .thenReturn(updatedDeck);
 
-        PlayerDeck result = deckController.updateDeck(1, new PlayerDeck(0, new Card(0, "test", 0, "test", 0), new Player(0, "username", "password", 0, 0, 0)));
-        Assertions.assertEquals(new PlayerDeck(1, new Card(0, "test", 0, "test", 0), new Player(0, "username", "password", 0, 0, 0)), result);
+        PlayerDeck result = deckController.updateDeck(1,
+                new PlayerDeck(0,
+                        new Card(0, "test", 0, "test", 0),
+                        new Player(0, "username", "password", 0, 0, 0)));
+        Assertions.assertEquals(updatedDeck, result);
     }
 
     @Test

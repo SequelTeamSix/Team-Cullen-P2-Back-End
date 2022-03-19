@@ -27,18 +27,20 @@ class CardControllerTest {
 
     @Test
     void testGetCardByName() {
-        when(cardService.getCardByName("test")).thenReturn(new Card(0, "test", 0, "test", 0));
+        Card byName = new Card(0, "test", 0, "test", 0);
+        when(cardService.getCardByName("test")).thenReturn(byName);
 
         Card result = cardController.getCardByName("test");
-        Assertions.assertEquals(new Card(0, "test", 0, "test", 0), result);
+        Assertions.assertEquals(byName, result);
     }
 
     @Test
     void testGetCardById() {
-        when(cardService.getCardById(5)).thenReturn(new Card(5, "test", 0, "test", 0));
+        Card byId = new Card(5, "test", 0, "test", 0);
+        when(cardService.getCardById(5)).thenReturn(byId);
 
         Card result = cardController.getCardById(5);
-        Assertions.assertEquals(new Card(5, "test", 0, "test", 0), result);
+        Assertions.assertEquals(byId, result);
     }
 
     @Test
@@ -65,7 +67,7 @@ class CardControllerTest {
         );
         when(cardService.getAllCardsByRarity(1)).thenReturn(cardsList);
 
-        List<Card> result = cardController.getAllCardsByRarity(0);
+        List<Card> result = cardController.getAllCardsByRarity(1);
         Assertions.assertEquals(cardsList, result);
     }
 
@@ -93,16 +95,17 @@ class CardControllerTest {
         );
         when(cardService.getAllCardsBetweenPowerLevels(0, 5)).thenReturn(cardsList);
 
-        List<Card> result = cardController.getAllCardsBetweenPowerLevels(0, 0);
+        List<Card> result = cardController.getAllCardsBetweenPowerLevels(0, 5);
         Assertions.assertEquals(cardsList, result);
     }
 
     @Test
     void testPostCard() {
-        when(cardService.saveCard(any())).thenReturn(new Card(0, "test", 0, "test", 0));
+        Card savedCard = new Card(0, "test", 0, "test", 0);
+        when(cardService.saveCard(any())).thenReturn(savedCard);
 
         Card result = cardController.postCard(new Card(0, "test", 0, "test", 0));
-        Assertions.assertEquals(new Card(0, "test", 0, "test", 0), result);
+        Assertions.assertEquals(savedCard, result);
     }
 
     @Test
@@ -115,9 +118,11 @@ class CardControllerTest {
 
     @Test
     void testUpdateModifierById() {
-        when(cardService.updateCard(1, any())).thenReturn(new Card(1, "test", 0, "test", 0));
+        Card updatedCard = new Card(1, "test", 0, "test", 0);
+        when(cardService.updateCard(1, new Card(0, "test", 0, "test", 0)))
+                .thenReturn(updatedCard);
 
         Card result = cardController.updateCardById(1, new Card(0, "test", 0, "test", 0));
-        Assertions.assertEquals(new Card(1, "test", 0, "test", 0), result);
+        Assertions.assertEquals(updatedCard, result);
     }
 }

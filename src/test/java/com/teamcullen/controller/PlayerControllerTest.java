@@ -40,18 +40,20 @@ class PlayerControllerTest {
 
     @Test
     void testGetPlayerById() {
-        when(playerService.getPlayerById(anyInt())).thenReturn(new Player(0, "username", "password", 0, 0, 0));
+        Player newPlayer = new Player(0, "username", "password", 0, 0, 0);
+        when(playerService.getPlayerById(anyInt())).thenReturn(newPlayer);
 
         Player result = playerController.getPlayerById(0);
-        Assertions.assertEquals(new Player(0, "username", "password", 0, 0, 0), result);
+        Assertions.assertEquals(newPlayer, result);
     }
 
     @Test
     void testGetPlayerByName() {
-        when(playerService.getPlayerByName("username")).thenReturn(new Player(0, "username", "password", 0, 0, 0));
+        Player byName = new Player(0, "username", "password", 0, 0, 0);
+        when(playerService.getPlayerByName("username")).thenReturn(byName);
 
         Player result = playerController.getPlayerByName("username");
-        Assertions.assertEquals(new Player(0, "username", "password", 0, 0, 0), result);
+        Assertions.assertEquals(byName, result);
     }
 
     @Test
@@ -69,18 +71,24 @@ class PlayerControllerTest {
 
     @Test
     void testCreatePlayer() {
-        when(playerService.createPlayer(any())).thenReturn(new Player(0, "username", "password", 0, 0, 0));
+        Player createdPlayer = new Player(0, "username", "password", 0, 0, 0);
+        when(playerService.createPlayer(any())).thenReturn(createdPlayer);
 
-        Player result = playerController.createPlayer(new Player(0, "username", "password", 0, 0, 0));
-        Assertions.assertEquals(new Player(0, "username", "password", 0, 0, 0), result);
+        Player result = playerController
+                .createPlayer(new Player(0, "username", "password", 0, 0, 0));
+        Assertions.assertEquals(createdPlayer, result);
     }
 
     @Test
     void testUpdatePlayer() {
-        when(playerService.updatePlayer(0, any())).thenReturn(new Player(0, "username", "password", 0, 0, 0));
+        Player updatedPlayer = new Player(0, "username", "password", 0, 0, 0);
+        when(playerService.updatePlayer(0,
+                new Player(0, "username", "password", 0, 0, 0)))
+                .thenReturn(updatedPlayer);
 
-        Player result = playerController.updatePlayer(0, new Player(0, "username", "password", 0, 0, 0));
-        Assertions.assertEquals(new Player(0, "username", "password", 0, 0, 0), result);
+        Player result = playerController.updatePlayer(0,
+                new Player(0, "username", "password", 0, 0, 0));
+        Assertions.assertEquals(updatedPlayer, result);
     }
 
     @Test
