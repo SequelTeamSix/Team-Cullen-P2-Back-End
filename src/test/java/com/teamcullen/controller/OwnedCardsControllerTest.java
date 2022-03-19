@@ -67,7 +67,7 @@ class OwnedCardsControllerTest {
         );
         when(ownedCardsService.getPlayerCardsById(1)).thenReturn(ownedList);
 
-        List<OwnedCards> result = ownedCardsController.getPlayerCardsById(0);
+        List<OwnedCards> result = ownedCardsController.getPlayerCardsById(1);
         Assertions.assertEquals(ownedList, result);
     }
 
