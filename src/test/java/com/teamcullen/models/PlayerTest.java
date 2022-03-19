@@ -1,4 +1,57 @@
 package com.teamcullen.models;
 
-public class PlayerTest {
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+class PlayerTest {
+    Player player = new Player(0, "username", "password", 0, 0, 0);
+
+    @Test
+    void testSetPlayer_id() {
+        player.setPlayer_id(0);
+    }
+
+    @Test
+    void testSetUsername() {
+        player.setUsername("test");
+    }
+
+    @Test
+    void testSetPassword() {
+        player.setPassword("test");
+    }
+
+    @Test
+    void testSetPoints() {
+        player.setPoints(0);
+    }
+
+    @Test
+    void testSetWins() {
+        player.setWins(0);
+    }
+
+    @Test
+    void testSetLoses() {
+        player.setLoses(0);
+    }
+
+    @Test
+    void testEquals() {
+        boolean result = player.equals(new Player(0, "username", "password", 0, 0, 0));
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    void testHashCode() {
+        int result = player.hashCode();
+        Assertions.assertEquals(1950622070, result);
+    }
+
+    @Test
+    void testToString() {
+        String result = player.toString();
+        Assertions.assertEquals("Player(player_id=0, username=username, " +
+                "password=password, points=0, wins=0, loses=0)", result);
+    }
 }
