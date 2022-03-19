@@ -31,9 +31,11 @@ class OwnedCardsControllerTest {
     void testGetAllCards() {
         List<OwnedCards> ownedList = Arrays.asList(
                 new OwnedCards(0, new Card(0, "test", 0, "test", 0),
-                        new Player(0, "username", "password", 0, 0, 0), 0),
+                        new Player(0, "username", "password", 0, 0, 0),
+                        0),
                 new OwnedCards(1, new Card(0, "test", 0, "test", 0),
-                        new Player(1, "username", "password", 0, 0, 0), 0)
+                        new Player(1, "username", "password", 0, 0, 0),
+                        0)
         );
         when(ownedCardsService.getAllCards()).thenReturn(ownedList);
 
@@ -57,9 +59,11 @@ class OwnedCardsControllerTest {
     void testGetPlayerCardsById() {
         List<OwnedCards> ownedList = Arrays.asList(
                 new OwnedCards(0, new Card(0, "test", 0, "test", 0),
-                        new Player(1, "username", "password", 0, 0, 0), 0),
+                        new Player(1, "username", "password", 0, 0, 0),
+                        0),
                 new OwnedCards(1, new Card(0, "test", 0, "test", 0),
-                        new Player(1, "username", "password", 0, 0, 0), 0)
+                        new Player(1, "username", "password", 0, 0, 0),
+                        0)
         );
         when(ownedCardsService.getPlayerCardsById(1)).thenReturn(ownedList);
 
