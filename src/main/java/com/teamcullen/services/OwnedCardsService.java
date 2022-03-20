@@ -72,7 +72,10 @@ public class OwnedCardsService {
 
     public OwnedCards updateCard(OwnedCards ownedCards) {
         OwnedCards oc = getCardByBothIds(ownedCards.getCard().getCard_id(), ownedCards.getPlayer().getPlayer_id());
-        int quantity = oc.getQuantitiy();
+        int quantity = 0;
+        if (oc != null) {
+            quantity = oc.getQuantitiy();
+        }
         if (quantity != 0) {
             ownedCards.setQuantitiy(quantity + 1);
         } else {
