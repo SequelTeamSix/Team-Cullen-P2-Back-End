@@ -70,19 +70,16 @@ public class OwnedCardsService {
 
 
 
-    public void updateCard(OwnedCards ownedCards) {
+    public OwnedCards updateCard(OwnedCards ownedCards) {
         OwnedCards oc = getCardByBothIds(ownedCards.getCard().getCard_id(), ownedCards.getPlayer().getPlayer_id());
         int quantity = 0;
         if (oc != null) {
             quantity = oc.getQuantitiy();
-        }
-        if (quantity != 0) {
-            ownedCards.setQuantitiy(quantity + 1);
-            ownedCardsRepository.updateByIds(ownedCards.getCard().getCard_id(),
-                    ownedCards.getPlayer().getPlayer_id(), quantity);
+            oc.setQuantitiy(quantity + 1);
+            return ownedCardsRepository.save(oc);
         } else {
             ownedCards.setQuantitiy(1);
-            ownedCardsRepository.save(ownedCards);
+            return ownedCardsRepository.save(ownedCards);
         }
     }
 
