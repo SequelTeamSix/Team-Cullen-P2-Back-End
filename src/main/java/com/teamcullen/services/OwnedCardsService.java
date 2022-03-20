@@ -70,7 +70,7 @@ public class OwnedCardsService {
 
 
 
-    public OwnedCards updateCard(OwnedCards ownedCards) {
+    public void updateCard(OwnedCards ownedCards) {
         OwnedCards oc = getCardByBothIds(ownedCards.getCard().getCard_id(), ownedCards.getPlayer().getPlayer_id());
         int quantity = 0;
         if (oc != null) {
@@ -80,9 +80,9 @@ public class OwnedCardsService {
             ownedCards.setQuantitiy(quantity + 1);
         } else {
             ownedCards.setQuantitiy(1);
-            return ownedCardsRepository.save(ownedCards);
+            ownedCardsRepository.save(ownedCards);
         }
-        return ownedCardsRepository.updateByIds(ownedCards.getCard().getCard_id(),
+        ownedCardsRepository.updateByIds(ownedCards.getCard().getCard_id(),
                 ownedCards.getPlayer().getPlayer_id(), quantity);
     }
 

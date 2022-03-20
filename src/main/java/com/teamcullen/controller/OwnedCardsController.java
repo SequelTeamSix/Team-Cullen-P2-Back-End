@@ -47,9 +47,9 @@ public class OwnedCardsController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/ownedcards/update")
-    public OwnedCards updateCard( @RequestBody OwnedCards ownedCards){
+    public void updateCard( @RequestBody OwnedCards ownedCards){
 
-        return ownedCardsService.updateCard( ownedCards);
+        ownedCardsService.updateCard( ownedCards);
     }
 
 
