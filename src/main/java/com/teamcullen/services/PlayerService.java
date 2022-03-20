@@ -84,7 +84,6 @@ public class PlayerService {
 
 
     public void deletePlayerById(int player_id){
-
         playerRepository.deletePlayerById(player_id);
     }
 

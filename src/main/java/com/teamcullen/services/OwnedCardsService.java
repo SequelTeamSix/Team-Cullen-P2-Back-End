@@ -1,6 +1,7 @@
 package com.teamcullen.services;
 
 import com.teamcullen.models.OwnedCards;
+import com.teamcullen.models.PlayerDeck;
 import com.teamcullen.repositories.OwnedCardsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,11 +70,11 @@ public class OwnedCardsService {
 
 
 
-    public OwnedCards updateCard( OwnedCards ownedCards) {
+    public OwnedCards updateCard(OwnedCards ownedCards) {
+        OwnedCards oc = getCardByBothIds(ownedCards.getCard().getCard_id(), ownedCards.getPlayer().getPlayer_id());
         int quantity = ownedCards.getQuantitiy();
         if (quantity != 0) {
             ownedCards.setQuantitiy(quantity + 1);
-
         } else {
             ownedCards.setQuantitiy(1);
         }
