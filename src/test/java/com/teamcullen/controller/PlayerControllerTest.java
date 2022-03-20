@@ -71,12 +71,12 @@ class PlayerControllerTest {
 
     @Test
     void testCreatePlayer() {
-        Player createdPlayer = new Player(0, "username", "password", 0, 0, 0);
-        when(playerService.createPlayer(any())).thenReturn(createdPlayer);
+        Player newPlayer = new Player(0, "username", "password", 0, 0, 0);
+        when(playerService.getPlayerByName("username")).thenReturn(newPlayer);
+        when(playerService.createPlayer(any())).thenReturn(newPlayer);
 
-        Player result = playerController
-                .createPlayer(new Player(0, "username", "password", 0, 0, 0));
-        Assertions.assertEquals(createdPlayer, result);
+        Player result = playerController.createPlayer(new Player(0, "username", "password", 0, 0, 0));
+        Assertions.assertEquals(newPlayer, result);
     }
 
     @Test

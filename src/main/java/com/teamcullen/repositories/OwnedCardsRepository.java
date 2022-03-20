@@ -35,6 +35,10 @@ public interface OwnedCardsRepository extends JpaRepository<OwnedCards, Integer>
         @Query("From OwnedCards where card_id = :card_id ")
         OwnedCards getCardByCardId(int card_id);
 
+        //gets single card based on given card_id and player_id
+        @Query("From OwnedCards where card_id = :card_id and player_id = :player_id")
+        OwnedCards getCardByBothIds(int card_id, int player_id);
+
     // TODO: 3/19/2022 may need agregate function (count either in new method or in add method to make sure quantity is updated
 
 
