@@ -46,7 +46,7 @@ public class CardController {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("card/power/{power_low}-{power_high}")
+    @GetMapping("card/power/{power_low}/{power_high}")
     public List<Card> getAllCardsBetweenPowerLevels(@PathVariable int power_low, @PathVariable int power_high) {
         return cardService.getAllCardsBetweenPowerLevels(power_low, power_high);
     }
