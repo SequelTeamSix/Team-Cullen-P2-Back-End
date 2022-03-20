@@ -25,7 +25,9 @@ public interface OwnedCardsRepository extends JpaRepository<OwnedCards, Integer>
 
         OwnedCards save(OwnedCards ownedCards);
 
-
+        @Modifying
+        @Query("Update OwnedCards set quantitiy = :quantity where (card_id = :card_id and player_id = :player_id)")
+        OwnedCards updateByIds(int card_id, int player_id, int quantity);
 
         @Modifying
         @Query("Delete From OwnedCards o where o.set_id = :set_id")
