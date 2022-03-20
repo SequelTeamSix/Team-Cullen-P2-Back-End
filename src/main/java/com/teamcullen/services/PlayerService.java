@@ -95,9 +95,11 @@ public class PlayerService {
 
         while(i < 20) {
             Card randomCard = cards.get((int)Math.floor(Math.random()*cards.size()));
-
-            OwnedCards oc = new OwnedCards();
+            OwnedCards oc = ownedCardsService.getCardByCardId(randomCard.getCard_id());
             PlayerDeck pd = new PlayerDeck();
+            if (oc == null) {
+                oc = new OwnedCards();
+            }
             oc.setCard(randomCard);
             oc.setPlayer(player);
             ownedCardsService.updateCard(oc);

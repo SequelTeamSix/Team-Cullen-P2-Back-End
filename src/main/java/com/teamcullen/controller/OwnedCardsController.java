@@ -31,6 +31,11 @@ public class OwnedCardsController {
     @GetMapping("/ownedcards/id/{set_id}")
     public OwnedCards getCardById(@PathVariable int set_id){return ownedCardsService.getCardById(set_id);}
 
+    //gets single card based on given card_id
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/ownedcards/card_id/{card_id}")
+    public OwnedCards getCardByCardId(@PathVariable int card_id){return ownedCardsService.getCardByCardId(card_id);}
+
     //gets all cards owned by a player of given player_id
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/ownedcards/player/{player_id}")

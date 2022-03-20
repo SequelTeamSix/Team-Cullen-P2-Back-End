@@ -25,6 +25,8 @@ public class OwnedCardsService {
     //gets single card based on given set_id
     public OwnedCards getCardById(int set_id){return ownedCardsRepository.getCardById(set_id);}
 
+    public OwnedCards getCardByCardId(int card_id){return ownedCardsRepository.getCardByCardId(card_id);}
+
     //gets all cards owned by a player of given player_id
     public List<OwnedCards> getPlayerCardsById(int player_id){return ownedCardsRepository.getPlayerCardsById(player_id);}
 
