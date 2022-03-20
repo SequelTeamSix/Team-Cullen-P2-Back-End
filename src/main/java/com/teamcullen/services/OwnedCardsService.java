@@ -28,9 +28,97 @@ public class OwnedCardsService {
     //gets all cards owned by a player of given player_id
     public List<OwnedCards> getPlayerCardsById(int player_id){return ownedCardsRepository.getPlayerCardsById(player_id);}
 
-    public OwnedCards addCard(OwnedCards ownedCards){return ownedCardsRepository.save(ownedCards);}
+
 
     public void deleteById(int set_id){ownedCardsRepository.deleteById(set_id);}
+
+
+    public OwnedCards addCard(OwnedCards ownedCards){
+
+
+        if (ownedCards.getQuantitiy() == 0) {
+
+            ownedCards.setQuantitiy(1);
+            return ownedCardsRepository.save(ownedCards);}
+
+//        }else{
+//            List<OwnedCards> dbOwnedCards = ownedCardsRepository.getPlayerCardsById(ownedCards.getPlayer().getPlayer_id());
+//
+//            for (int i = 0; i < dbOwnedCards.size() ; i++) {
+//
+//                if(dbOwnedCards.get(i).getCard().equals(ownedCards.getCard())){
+//
+//                        ownedCards.setSet_id(dbOwnedCards.get(i).getSet_id());
+//
+//                   // return updateCard(ownedCards.getSet_id(), ownedCards);
+//
+//                }
+//
+//            }
+//
+//
+//        }
+        return null;
+
+        }
+
+
+
+
+    public OwnedCards updateCard( OwnedCards ownedCards){
+
+
+        if(ownedCards.getQuantitiy() == 0){
+
+        ownedCards.setQuantitiy(1);
+        return ownedCardsRepository.save(ownedCards);
+
+
+        }else {
+
+
+            List<OwnedCards> dbOwnedCards = ownedCardsRepository.getPlayerCardsById(ownedCards.getPlayer().getPlayer_id());
+
+            for (int i = 0; i < dbOwnedCards.size() ; i++) {
+
+                if(dbOwnedCards.get(i).getCard().equals(ownedCards.getCard())){
+
+                    ownedCards.setSet_id(dbOwnedCards.get(i).getSet_id());
+                    ownedCards.setQuantitiy(dbOwnedCards.get(i).getQuantitiy()+1);
+
+                     return ownedCardsRepository.save(ownedCards);
+
+
+                }
+
+            }
+
+        }
+        return null;
+
+
+//        OwnedCards dbOwnedCards = ownedCardsRepository.getCardById(set_id);
+//
+//
+//        if (dbOwnedCards != null){
+//
+//            if (dbOwnedCards.getQuantitiy() == 0) {
+//
+//                ownedCards.setQuantitiy(1);
+//
+//            }else{
+//
+//                ownedCards.setQuantitiy(dbOwnedCards.getQuantitiy()+1);
+//            }
+//
+//            return ownedCardsRepository.save(ownedCards);
+//
+//        }
+
+      //  return null;
+
+
+    }
 
 
 

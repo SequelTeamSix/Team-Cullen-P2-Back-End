@@ -25,12 +25,13 @@ public interface OwnedCardsRepository extends JpaRepository<OwnedCards, Integer>
 
         OwnedCards save(OwnedCards ownedCards);
 
+
+
         @Modifying
         @Query("Delete From OwnedCards o where o.set_id = :set_id")
         void deleteById(int set_id);
 
-
-
+        // TODO: 3/19/2022 may need agregate function (count either in new method or in add method to make sure quantity is updated
 
 
 

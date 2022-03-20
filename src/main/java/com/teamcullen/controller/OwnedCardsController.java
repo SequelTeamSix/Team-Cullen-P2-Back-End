@@ -41,6 +41,14 @@ public class OwnedCardsController {
     public OwnedCards addCard(@RequestBody OwnedCards ownedCards){ return ownedCardsService.addCard(ownedCards);}
 
     @CrossOrigin(origins = "http://localhost:3000")
+    @PutMapping("/ownedcards/update")
+    public OwnedCards updateCard( @RequestBody OwnedCards ownedCards){
+
+        return ownedCardsService.updateCard( ownedCards);
+    }
+
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/ownedcards/delete/{set_id}")
     public void deleteById(@PathVariable int set_id){ownedCardsService.deleteById(set_id);}
 

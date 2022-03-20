@@ -1,9 +1,7 @@
 package com.teamcullen.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
 import javax.persistence.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +14,8 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@EqualsAndHashCode
+
 public class OwnedCards {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

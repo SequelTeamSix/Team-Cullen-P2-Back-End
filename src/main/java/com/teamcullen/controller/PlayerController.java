@@ -40,7 +40,14 @@ public class PlayerController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/player/add")
     public Player createPlayer(@RequestBody Player player){
-        return playerService.createPlayer(player);
+
+        //what I want to replace it with
+        playerService.populateDeck(playerService.createPlayer(player));
+
+    return playerService.getPlayerByName(player.getUsername());
+
+            //original code
+        //return playerService.createPlayer(player);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
