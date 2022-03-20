@@ -89,48 +89,31 @@ public class PlayerService {
     }
 
 
-    public void populateDeck(Player player){
+    public void populateDeck(Player player) {
         int i = 0;
         List<Card> cards = cardRepository.getAllCards();
-        OwnedCards oc = new OwnedCards();
-        PlayerDeck pd = new PlayerDeck();
 
-        //createPlayer(player);
-        Card randomCard;
-        oc.setPlayer(player);
-        pd.setPlayer(player);
+        while(i < 20) {
+            Card randomCard = cards.get((int)Math.floor(Math.random()*cards.size()));
 
-
-        while(i < 20){
-
-                     randomCard = cards.get((int)Math.floor(Math.random()*(38)));
-
-
-
+            OwnedCards oc = new OwnedCards();
+            PlayerDeck pd = new PlayerDeck();
             oc.setCard(randomCard);
-
+            oc.setPlayer(player);
             ownedCardsService.updateCard(oc);
 
-
-
+            pd.setPlayer(player);
             pd.setCard(randomCard);
             deckService.saveDeck(pd);
-
             i++;
-
-
-
         }
-
-
-
-        }
-
-
-
-
-
     }
+
+
+
+
+
+}
 
 
 

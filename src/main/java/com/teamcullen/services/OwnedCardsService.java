@@ -34,8 +34,6 @@ public class OwnedCardsService {
 
 
     public OwnedCards addCard(OwnedCards ownedCards){
-
-
         if (ownedCards.getQuantitiy() == 0) {
 
             ownedCards.setQuantitiy(1);
@@ -65,9 +63,18 @@ public class OwnedCardsService {
 
 
 
-    public OwnedCards updateCard( OwnedCards ownedCards){
+    public OwnedCards updateCard( OwnedCards ownedCards) {
+        int quantity = ownedCards.getQuantitiy();
+        if (quantity != 0) {
+            ownedCards.setQuantitiy(quantity + 1);
 
+        } else {
+            ownedCards.setQuantitiy(1);
+        }
+        return ownedCardsRepository.save(ownedCards);
+    }
 
+        /*
         if(ownedCards.getQuantitiy() == 0){
 
         ownedCards.setQuantitiy(1);
@@ -93,8 +100,7 @@ public class OwnedCardsService {
 
             }
 
-        }
-        return null;
+        }*/
 
 
 //        OwnedCards dbOwnedCards = ownedCardsRepository.getCardById(set_id);
@@ -118,7 +124,7 @@ public class OwnedCardsService {
       //  return null;
 
 
-    }
+
 
 
 
