@@ -78,12 +78,12 @@ public class OwnedCardsService {
         }
         if (quantity != 0) {
             ownedCards.setQuantitiy(quantity + 1);
+            ownedCardsRepository.updateByIds(ownedCards.getCard().getCard_id(),
+                    ownedCards.getPlayer().getPlayer_id(), quantity);
         } else {
             ownedCards.setQuantitiy(1);
             ownedCardsRepository.save(ownedCards);
         }
-        ownedCardsRepository.updateByIds(ownedCards.getCard().getCard_id(),
-                ownedCards.getPlayer().getPlayer_id(), quantity);
     }
 
         /*
