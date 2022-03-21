@@ -2,6 +2,8 @@ package com.teamcullen.models;
 
 import lombok.*;
 
+import com.teamcullen.aspects.OwnedCardsAspect;
+
 import javax.persistence.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;

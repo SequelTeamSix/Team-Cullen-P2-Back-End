@@ -1,0 +1,21 @@
+2022-03-21 14:47:28 INFO  Application:18 - Application activated
+2022-03-21 14:52:11 INFO  Application:18 - Application activated
+2022-03-21 15:28:05 INFO  Application:18 - Application activated
+2022-03-21 15:30:55 INFO  Application:18 - Application activated
+2022-03-21 15:56:42 INFO  Application:18 - Application activated
+2022-03-21 16:37:24 INFO  Application:18 - Backend activated
+2022-03-21 16:46:00 INFO  Application:18 - Backend activated
+2022-03-21 16:47:12 INFO  OwnedCardsAspect:26 - Card added OwnedCards com.teamcullen.repositories.OwnedCardsRepository.getCardByBothIds(int,int)
+2022-03-21 16:47:12 INFO  OwnedCardsAspect:26 - Card added OwnedCards com.teamcullen.repositories.OwnedCardsRepository.getCardByBothIds(int,int)
+2022-03-21 16:47:12 INFO  OwnedCardsAspect:26 - Card added OwnedCards com.teamcullen.repositories.OwnedCardsRepository.getCardByBothIds(int,int)
+2022-03-21 16:47:12 INFO  OwnedCardsAspect:26 - Card added OwnedCards com.teamcullen.repositories.OwnedCardsRepository.getCardByBothIds(int,int)
+2022-03-21 17:15:36 INFO  Application:18 - Backend activated
+2022-03-21 17:16:50 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.controller.PlayerController.getAllPlayers()
+2022-03-21 17:16:50 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.services.PlayerService.getAllPlayers()
+2022-03-21 17:16:50 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.repositories.PlayerRepository.getAllPlayers()
+2022-03-21 17:17:26 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.controller.PlayerController.getAllPlayers()
+2022-03-21 17:17:26 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.services.PlayerService.getAllPlayers()
+2022-03-21 17:17:26 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.repositories.PlayerRepository.getAllPlayers()
+2022-03-21 17:17:41 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.controller.PlayerController.getAllPlayers()
+2022-03-21 17:17:41 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.services.PlayerService.getAllPlayers()
+2022-03-21 17:17:41 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.repositories.PlayerRepository.getAllPlayers()

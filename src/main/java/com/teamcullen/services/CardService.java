@@ -5,6 +5,7 @@ import com.teamcullen.repositories.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Transactional
 public class CardService {
     CardRepository cardRepository;
+
 
     @Autowired
     public CardService(CardRepository cardRepository) {
