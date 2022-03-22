@@ -51,6 +51,16 @@ class DeckServiceTest {
     }
 
     @Test
+    void testUpdateDeckNull() {
+        PlayerDeck updated = null;
+        when(deckRepository.save(any())).thenReturn(updated);
+        when(deckRepository.getById(0)).thenReturn(updated);
+
+        PlayerDeck result = deckService.updateDeck(0, new PlayerDeck(0, new Card(0, "card_name", 0, "image_url", 0), new Player(0, "username", "password", 0, 0, 0)));
+        Assertions.assertEquals(updated, result);
+    }
+
+    @Test
     void testGetAllDecks() {
         List<PlayerDeck> decks = Arrays.asList(
                 new PlayerDeck(0,

@@ -1,6 +1,10 @@
 package com.teamcullen.services;
 
+import com.teamcullen.models.Card;
+import com.teamcullen.models.OwnedCards;
 import com.teamcullen.models.Player;
+import com.teamcullen.models.PlayerDeck;
+import com.teamcullen.repositories.CardRepository;
 import com.teamcullen.repositories.PlayerRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,6 +21,12 @@ import static org.mockito.Mockito.*;
 class PlayerServiceTest {
     @Mock
     PlayerRepository playerRepository;
+    @Mock
+    CardRepository cardRepository;
+    @Mock
+    DeckService deckService;
+    @Mock
+    OwnedCardsService ownedCardsService;
     @InjectMocks
     PlayerService playerService;
 
@@ -93,7 +103,40 @@ class PlayerServiceTest {
     }
 
     @Test
+    void testUpdatePlayerNull() {
+        Player updated = null;
+        when(playerRepository.getPlayerById(0)).thenReturn(updated);
+        when(playerRepository.save(any())).thenReturn(updated);
+
+        Player result = playerService.updatePlayer(0,
+                new Player(0, "username", "password", 0, 0, 0)
+        );
+        Assertions.assertEquals(updated, result);
+    }
+
+    @Test
     void testDeletePlayerById() {
         playerService.deletePlayerById(0);
+    }
+
+    @Test
+    void testPopulateDeck() {
+        List<Card> allCards = Arrays.asList(
+                new Card(0, "test", 0, "test", 1),
+                new Card(1, "test1", 0, "test1", 1));
+        PlayerDeck saved = new PlayerDeck(0,
+                new Card(0, "card_name",0, "image_url", 0),
+                new Player(0, "username", "password", 0, 0, 0));
+        OwnedCards ownedCards = new OwnedCards(0,
+                new Card(0, "card_name", 0,"image_url", 0),
+                new Player(0, "username", "password", 0, 0, 0),
+                0);
+        when(cardRepository.getAllCards()).thenReturn(allCards);
+        when(deckService.saveDeck(any())).thenReturn(saved);
+        when(ownedCardsService.getCardByBothIds(0, 0)).thenReturn(ownedCards);
+        when(ownedCardsService.updateCard(any())).thenReturn(ownedCards);
+
+        playerService.populateDeck(new Player(0, "username",
+                "password", 0, 0, 0));
     }
 }

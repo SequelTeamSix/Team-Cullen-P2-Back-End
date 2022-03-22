@@ -117,4 +117,14 @@ class CardServiceTest {
         Card result = cardService.updateCard(0, updatedCard);
         Assertions.assertEquals(updatedCard, result);
     }
+
+    @Test
+    void testUpdateCardNull() {
+        Card updatedCard = null;
+        when(cardRepository.save(any())).thenReturn(updatedCard);
+        when(cardRepository.getCardById(0)).thenReturn(updatedCard);
+
+        Card result = cardService.updateCard(0, updatedCard);
+        Assertions.assertEquals(updatedCard, result);
+    }
 }

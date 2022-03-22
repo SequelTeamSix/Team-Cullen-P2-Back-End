@@ -19,3 +19,74 @@
 2022-03-21 17:17:41 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.controller.PlayerController.getAllPlayers()
 2022-03-21 17:17:41 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.services.PlayerService.getAllPlayers()
 2022-03-21 17:17:41 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  List com.teamcullen.repositories.PlayerRepository.getAllPlayers()
+2022-03-22 15:50:00 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 15:50:00 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 15:50:00 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 15:51:56 INFO  OwnedCardsAspect:21 - Card added. Command signature:  null
+2022-03-22 15:51:57 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 15:51:57 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 15:51:57 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 15:51:57 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  null
+2022-03-22 15:51:57 INFO  PlayerAspect:20 - Player Created. Command signature:  null
+2022-03-22 15:51:57 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
+2022-03-22 15:51:57 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
+2022-03-22 15:51:57 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
+2022-03-22 15:58:03 INFO  Application:18 - Backend activated
+2022-03-22 15:58:15 INFO  OwnedCardsAspect:21 - Card added. Command signature:  null
+2022-03-22 15:58:15 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 15:58:15 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 15:58:15 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 15:58:15 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  null
+2022-03-22 15:58:15 INFO  PlayerAspect:20 - Player Created. Command signature:  null
+2022-03-22 15:58:15 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
+2022-03-22 15:58:15 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
+2022-03-22 15:58:15 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
+2022-03-22 15:59:35 INFO  Application:18 - Backend activated
+2022-03-22 15:59:46 INFO  OwnedCardsAspect:21 - Card added. Command signature:  null
+2022-03-22 15:59:46 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 15:59:46 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 15:59:46 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 15:59:46 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  null
+2022-03-22 15:59:46 INFO  PlayerAspect:20 - Player Created. Command signature:  null
+2022-03-22 15:59:46 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
+2022-03-22 15:59:46 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
+2022-03-22 15:59:46 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
+2022-03-22 16:01:35 INFO  Application:18 - Backend activated
+2022-03-22 16:01:45 INFO  OwnedCardsAspect:21 - Card added. Command signature:  null
+2022-03-22 16:01:45 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 16:01:45 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 16:01:45 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 16:01:46 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  null
+2022-03-22 16:01:46 INFO  PlayerAspect:20 - Player Created. Command signature:  null
+2022-03-22 16:01:46 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
+2022-03-22 16:01:46 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
+2022-03-22 16:01:46 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
+2022-03-22 16:02:29 INFO  OwnedCardsAspect:21 - Card added. Command signature:  null
+2022-03-22 16:02:29 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 16:02:29 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 16:02:29 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 16:02:30 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  null
+2022-03-22 16:02:30 INFO  PlayerAspect:20 - Player Created. Command signature:  null
+2022-03-22 16:02:30 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
+2022-03-22 16:02:30 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
+2022-03-22 16:02:30 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
+2022-03-22 16:02:53 INFO  Application:18 - Backend activated
+2022-03-22 16:03:03 INFO  OwnedCardsAspect:21 - Card added. Command signature:  null
+2022-03-22 16:03:03 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 16:03:03 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 16:03:03 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 16:03:03 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  null
+2022-03-22 16:03:03 INFO  PlayerAspect:20 - Player Created. Command signature:  null
+2022-03-22 16:03:03 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
+2022-03-22 16:03:03 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
+2022-03-22 16:03:03 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
+2022-03-22 16:03:28 INFO  Application:18 - Backend activated
+2022-03-22 16:03:39 INFO  OwnedCardsAspect:21 - Card added. Command signature:  null
+2022-03-22 16:03:39 INFO  DeckAspect:20 - Deck saved. Command signature:  null
+2022-03-22 16:03:39 INFO  DeckAspect:25 - Deck updated. Command signature:  null
+2022-03-22 16:03:39 INFO  DeckAspect:30 - All decks retrieved. Command signature:  null
+2022-03-22 16:03:40 INFO  PlayerAspect:25 - List of all players retrieved. Command signature:  null
+2022-03-22 16:03:40 INFO  PlayerAspect:20 - Player Created. Command signature:  null
+2022-03-22 16:03:40 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
+2022-03-22 16:03:40 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
+2022-03-22 16:03:40 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
