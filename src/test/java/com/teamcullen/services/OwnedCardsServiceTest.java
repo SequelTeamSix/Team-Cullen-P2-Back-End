@@ -32,10 +32,10 @@ class OwnedCardsServiceTest {
         List<OwnedCards> allCards = Arrays.asList(
                 new OwnedCards(0,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(0, "username", "password", 0, 0, 0), 0),
+                        new Player(0, "username", "password", 0, 0, 0, "false"), 0),
                 new OwnedCards(1,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(1, "username", "password", 0, 0, 0), 0)
+                        new Player(1, "username", "password", 0, 0, 0, "false"), 0)
         );
         when(ownedCardsRepository.getAllCards()).thenReturn(allCards);
 
@@ -47,7 +47,7 @@ class OwnedCardsServiceTest {
     void testGetCardByCardId() {
         OwnedCards byCardId = new OwnedCards(0,
                 new Card(0, "card_name", 0,"image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0);
         when(ownedCardsRepository.getCardByCardId(0)).thenReturn(byCardId);
 
@@ -59,7 +59,7 @@ class OwnedCardsServiceTest {
     void testGetCardById() {
         OwnedCards byId = new OwnedCards(0,
                 new Card(0, "card_name", 0,"image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0);
                 when(ownedCardsRepository.getCardById(anyInt())).thenReturn(byId);
 
@@ -71,7 +71,7 @@ class OwnedCardsServiceTest {
     void testGetCardByBothIds() {
         OwnedCards byBothIds = new OwnedCards(0,
                 new Card(0, "card_name", 0,"image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0);
         when(ownedCardsRepository.getCardByBothIds(0, 0)).thenReturn(byBothIds);
 
@@ -84,10 +84,10 @@ class OwnedCardsServiceTest {
         List<OwnedCards> playerById = Arrays.asList(
                 new OwnedCards(0,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(1, "username", "password", 0, 0, 0), 0),
+                        new Player(1, "username", "password", 0, 0, 0, "false"), 0),
                 new OwnedCards(1,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(1, "username", "password", 0, 0, 0), 0)
+                        new Player(1, "username", "password", 0, 0, 0, "false"), 0)
         );
         when(ownedCardsRepository.getPlayerCardsById(1)).thenReturn(playerById);
 
@@ -99,13 +99,13 @@ class OwnedCardsServiceTest {
     void testAddCard() {
         OwnedCards added = new OwnedCards(0,
                 new Card(0, "card_name", 0,"image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0);
         when(ownedCardsRepository.save(any())).thenReturn(added);
 
         OwnedCards result = ownedCardsService.addCard(new OwnedCards(0,
                 new Card(0, "card_name", 0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0));
         Assertions.assertEquals(added, result);
     }
@@ -114,14 +114,14 @@ class OwnedCardsServiceTest {
     void testUpdateCard() {
         OwnedCards updated = new OwnedCards(0,
                 new Card(0, "card_name", 0,"image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0);
         when(ownedCardsRepository.save(any())).thenReturn(updated);
         when(ownedCardsRepository.getCardByBothIds(0, 0)).thenReturn(updated);
 
         OwnedCards result = ownedCardsService.updateCard(new OwnedCards(0,
                 new Card(0, "card_name", 0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0));
         Assertions.assertEquals(updated, result);
     }
@@ -130,14 +130,14 @@ class OwnedCardsServiceTest {
     void testUpdateCardNull() {
         OwnedCards updated = new OwnedCards(0,
                 new Card(0, "card_name", 0,"image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0);
         when(ownedCardsRepository.save(any())).thenReturn(updated);
         when(ownedCardsRepository.getCardByBothIds(0, 0)).thenReturn(null);
 
         OwnedCards result = ownedCardsService.updateCard(new OwnedCards(0,
                 new Card(0, "card_name", 0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0));
         Assertions.assertEquals(updated, result);
     }

@@ -32,10 +32,10 @@ class DeckControllerTest {
         List<PlayerDeck> deckList = Arrays.asList(
                 new PlayerDeck(0,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(0, "username", "password", 0, 0, 0)),
+                        new Player(0, "username", "password", 0, 0, 0, "false")),
                 new PlayerDeck(1,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(0, "username", "password", 0, 0, 0)
+                        new Player(0, "username", "password", 0, 0, 0, "false")
                 )
         );
         when(deckService.getAllDecks()).thenReturn(deckList);
@@ -49,10 +49,10 @@ class DeckControllerTest {
         List<PlayerDeck> deckList = Arrays.asList(
                 new PlayerDeck(0,
                         new Card(0, "test", 0, "test", 0),
-                        new Player(0, "username", "password", 0, 0, 0)),
+                        new Player(0, "username", "password", 0, 0, 0, "false")),
                 new PlayerDeck(1,
                         new Card(1, "test", 0, "test", 0),
-                        new Player(0, "username", "password", 0, 0, 0)
+                        new Player(0, "username", "password", 0, 0, 0, "false")
                 )
         );
         when(deckService.getDeckById(0)).thenReturn(deckList);
@@ -65,7 +65,7 @@ class DeckControllerTest {
     void testGetById() {
         PlayerDeck deck = new PlayerDeck(0,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(0, "username", "password", 0, 0, 0));
+                        new Player(0, "username", "password", 0, 0, 0, "false"));
         when(deckService.getById(0)).thenReturn(deck);
 
         PlayerDeck result = deckController.GetById(0);
@@ -76,12 +76,12 @@ class DeckControllerTest {
     void testSaveDeck() {
         PlayerDeck savedDeck = new PlayerDeck(0,
                 new Card(0, "test", 0, "test", 0),
-                new Player(0, "username", "password", 0, 0, 0));
+                new Player(0, "username", "password", 0, 0, 0, "false"));
         when(deckService.saveDeck(any())).thenReturn(savedDeck);
 
         PlayerDeck result = deckController.saveDeck(new PlayerDeck(0,
                 new Card(0, "test", 0, "test", 0),
-                new Player(0, "username", "password", 0, 0, 0)));
+                new Player(0, "username", "password", 0, 0, 0, "false")));
         Assertions.assertEquals(savedDeck, result);
     }
 
@@ -89,17 +89,17 @@ class DeckControllerTest {
     void testUpdateDeck() {
         PlayerDeck updatedDeck = new PlayerDeck(1,
                 new Card(0, "test", 0, "test", 0),
-                new Player(0, "username", "password",0, 0, 0));
+                new Player(0, "username", "password",0, 0, 0, "false"));
         when(deckService.updateDeck(1,
                 new PlayerDeck(0,
                         new Card(0, "test", 0, "test", 0),
-                        new Player(0, "username", "password", 0, 0, 0))))
+                        new Player(0, "username", "password", 0, 0, 0, "false"))))
                 .thenReturn(updatedDeck);
 
         PlayerDeck result = deckController.updateDeck(1,
                 new PlayerDeck(0,
                         new Card(0, "test", 0, "test", 0),
-                        new Player(0, "username", "password", 0, 0, 0)));
+                        new Player(0, "username", "password", 0, 0, 0, "false")));
         Assertions.assertEquals(updatedDeck, result);
     }
 

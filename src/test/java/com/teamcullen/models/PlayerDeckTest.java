@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class PlayerDeckTest {
     PlayerDeck playerDeck = new PlayerDeck(0,
             new Card(0, "card_name", 0, "image_url", 0),
-            new Player(0, "username", "password", 0, 0, 0));
+            new Player(0, "username", "password", 0, 0, 0, "false"));
 
     @Test
     void testSetRel_id() {
@@ -20,14 +20,14 @@ class PlayerDeckTest {
 
     @Test
     void testSetPlayer() {
-        playerDeck.setPlayer(new Player(0, "username", "password", 0, 0, 0));
+        playerDeck.setPlayer(new Player(0, "username", "password", 0, 0, 0, "false"));
     }
 
     @Test
     void testEquals() {
         boolean result = playerDeck.equals(new PlayerDeck(0,
                 new Card(0, "card_name", 0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0)));
+                new Player(0, "username", "password", 0, 0, 0, "false")));
         Assertions.assertTrue(result);
     }
 

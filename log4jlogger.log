@@ -90,3 +90,4 @@
 2022-03-22 16:03:40 INFO  PlayerAspect:40 - Populate deck method ran. Command signature:  null
 2022-03-22 16:03:40 INFO  PlayerAspect:35 - Players retrieved by name. Command signature:  null
 2022-03-22 16:03:40 INFO  PlayerAspect:30 - Players retrieved by win count. Command signature:  null
+2022-03-22 15:49:49 INFO  Application:18 - Backend activated

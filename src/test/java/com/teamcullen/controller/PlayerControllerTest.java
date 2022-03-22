@@ -28,9 +28,9 @@ class PlayerControllerTest {
     @Test
     void testGetAllPlayers() {
         List<Player> playerList = Arrays.asList(
-                new Player(0, "username1", "password1", 0, 0, 0),
-                new Player(0, "username2", "password2", 0, 0, 0),
-                new Player(0, "username3", "password3", 0, 0, 0)
+                new Player(0, "username1", "password1", 0, 0, 0, "false"),
+                new Player(0, "username2", "password2", 0, 0, 0, "false"),
+                new Player(0, "username3", "password3", 0, 0, 0, "false")
         );
         when(playerService.getAllPlayers()).thenReturn(playerList);
 
@@ -40,7 +40,7 @@ class PlayerControllerTest {
 
     @Test
     void testGetPlayerById() {
-        Player newPlayer = new Player(0, "username", "password", 0, 0, 0);
+        Player newPlayer = new Player(0, "username", "password", 0, 0, 0, "false");
         when(playerService.getPlayerById(anyInt())).thenReturn(newPlayer);
 
         Player result = playerController.getPlayerById(0);
@@ -49,7 +49,7 @@ class PlayerControllerTest {
 
     @Test
     void testGetPlayerByName() {
-        Player byName = new Player(0, "username", "password", 0, 0, 0);
+        Player byName = new Player(0, "username", "password", 0, 0, 0, "false");
         when(playerService.getPlayerByName("username")).thenReturn(byName);
 
         Player result = playerController.getPlayerByName("username");
@@ -59,9 +59,9 @@ class PlayerControllerTest {
     @Test
     void testGetPlayersByWins() {
         List<Player> playerList = Arrays.asList(
-                new Player(0, "username1", "password1", 0, 0, 0),
-                new Player(0, "username2", "password2", 0, 0, 0),
-                new Player(0, "username3", "password3", 0, 0, 0)
+                new Player(0, "username1", "password1", 0, 0, 0, "false"),
+                new Player(0, "username2", "password2", 0, 0, 0, "false"),
+                new Player(0, "username3", "password3", 0, 0, 0, "false")
         );
         when(playerService.getPlayersByWins()).thenReturn(playerList);
 
@@ -71,23 +71,23 @@ class PlayerControllerTest {
 
     @Test
     void testCreatePlayer() {
-        Player newPlayer = new Player(0, "username", "password", 0, 0, 0);
+        Player newPlayer = new Player(0, "username", "password", 0, 0, 0, "false");
         when(playerService.getPlayerByName("username")).thenReturn(newPlayer);
         when(playerService.createPlayer(any())).thenReturn(newPlayer);
 
-        Player result = playerController.createPlayer(new Player(0, "username", "password", 0, 0, 0));
+        Player result = playerController.createPlayer(new Player(0, "username", "password", 0, 0, 0, "false"));
         Assertions.assertEquals(newPlayer, result);
     }
 
     @Test
     void testUpdatePlayer() {
-        Player updatedPlayer = new Player(0, "username", "password", 0, 0, 0);
+        Player updatedPlayer = new Player(0, "username", "password", 0, 0, 0, "false");
         when(playerService.updatePlayer(0,
-                new Player(0, "username", "password", 0, 0, 0)))
+                new Player(0, "username", "password", 0, 0, 0, "false")))
                 .thenReturn(updatedPlayer);
 
         Player result = playerController.updatePlayer(0,
-                new Player(0, "username", "password", 0, 0, 0));
+                new Player(0, "username", "password", 0, 0, 0, "false"));
         Assertions.assertEquals(updatedPlayer, result);
     }
 

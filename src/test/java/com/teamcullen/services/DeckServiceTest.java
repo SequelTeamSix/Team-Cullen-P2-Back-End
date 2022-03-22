@@ -31,10 +31,10 @@ class DeckServiceTest {
     void testSaveDeck() {
         PlayerDeck deck = new PlayerDeck(0,
                 new Card(0, "card_name",0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0));
+                new Player(0, "username", "password", 0, 0, 0, "false"));
         when(deckRepository.save(any())).thenReturn(deck);
 
-        PlayerDeck result = deckService.saveDeck(new PlayerDeck(0, new Card(0, "card_name", 0, "image_url", 0), new Player(0, "username", "password", 0, 0, 0)));
+        PlayerDeck result = deckService.saveDeck(new PlayerDeck(0, new Card(0, "card_name", 0, "image_url", 0), new Player(0, "username", "password", 0, 0, 0, "false")));
         Assertions.assertEquals(deck, result);
     }
 
@@ -42,11 +42,11 @@ class DeckServiceTest {
     void testUpdateDeck() {
         PlayerDeck updated = new PlayerDeck(0,
                 new Card(0, "card_name",0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0));
+                new Player(0, "username", "password", 0, 0, 0, "false"));
         when(deckRepository.save(any())).thenReturn(updated);
         when(deckRepository.getById(0)).thenReturn(updated);
 
-        PlayerDeck result = deckService.updateDeck(0, new PlayerDeck(0, new Card(0, "card_name", 0, "image_url", 0), new Player(0, "username", "password", 0, 0, 0)));
+        PlayerDeck result = deckService.updateDeck(0, new PlayerDeck(0, new Card(0, "card_name", 0, "image_url", 0), new Player(0, "username", "password", 0, 0, 0, "false")));
         Assertions.assertEquals(updated, result);
     }
 
@@ -56,7 +56,7 @@ class DeckServiceTest {
         when(deckRepository.save(any())).thenReturn(updated);
         when(deckRepository.getById(0)).thenReturn(updated);
 
-        PlayerDeck result = deckService.updateDeck(0, new PlayerDeck(0, new Card(0, "card_name", 0, "image_url", 0), new Player(0, "username", "password", 0, 0, 0)));
+        PlayerDeck result = deckService.updateDeck(0, new PlayerDeck(0, new Card(0, "card_name", 0, "image_url", 0), new Player(0, "username", "password", 0, 0, 0, "false")));
         Assertions.assertEquals(updated, result);
     }
 
@@ -65,10 +65,10 @@ class DeckServiceTest {
         List<PlayerDeck> decks = Arrays.asList(
                 new PlayerDeck(0,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(1, "username", "password", 0, 0, 0)),
+                        new Player(1, "username", "password", 0, 0, 0, "false")),
                 new PlayerDeck(0,
                         new Card(1, "card_name", 0, "image_url", 0),
-                        new Player(1, "username", "password", 0, 0, 0))
+                        new Player(1, "username", "password", 0, 0, 0, "false"))
         );
         when(deckRepository.getAllDecks()).thenReturn(decks);
 
@@ -81,10 +81,10 @@ class DeckServiceTest {
         List<PlayerDeck> deckById = Arrays.asList(
                 new PlayerDeck(0,
                         new Card(0, "card_name", 0, "image_url", 0),
-                        new Player(1, "username", "password", 0, 0, 0)),
+                        new Player(1, "username", "password", 0, 0, 0, "false")),
                 new PlayerDeck(0,
                         new Card(1, "card_name", 0, "image_url", 0),
-                        new Player(1, "username", "password", 0, 0, 0))
+                        new Player(1, "username", "password", 0, 0, 0, "false"))
         );
         when(deckRepository.getDeckById(1)).thenReturn(deckById);
         List<PlayerDeck> result = deckService.getDeckById(1);
@@ -95,7 +95,7 @@ class DeckServiceTest {
     void testGetById() {
         PlayerDeck byId = new PlayerDeck(0,
                 new Card(0, "card_name",0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0));
+                new Player(0, "username", "password", 0, 0, 0, "false"));
         when(deckRepository.getById(0)).thenReturn(byId);
 
         PlayerDeck result = deckService.getById(0);

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class PlayerTest {
-    Player player = new Player(0, "username", "password", 0, 0, 0);
+    Player player = new Player(0, "username", "password", 0, 0, 0, "false");
 
     @Test
     void testSetPlayer_id() {
@@ -38,7 +38,7 @@ class PlayerTest {
 
     @Test
     void testEquals() {
-        boolean result = player.equals(new Player(0, "username", "password", 0, 0, 0));
+        boolean result = player.equals(new Player(0, "username", "password", 0, 0, 0, "false"));
         Assertions.assertTrue(result);
     }
 

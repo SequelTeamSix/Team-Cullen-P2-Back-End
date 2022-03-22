@@ -38,9 +38,9 @@ class PlayerServiceTest {
     @Test
     void testGetAllPlayers() {
         List<Player> allPlayers = Arrays.asList(
-                new Player(0, "username", "password", 0, 0, 0),
-                new Player(1, "username", "password", 0, 0, 0),
-                new Player(2, "username", "password", 0, 0, 0)
+                new Player(0, "username", "password", 0, 0, 0, "false"),
+                new Player(1, "username", "password", 0, 0, 0, "false"),
+                new Player(2, "username", "password", 0, 0, 0, "false")
         );
         when(playerRepository.getAllPlayers()).thenReturn(allPlayers);
 
@@ -50,7 +50,7 @@ class PlayerServiceTest {
 
     @Test
     void testGetPlayerById() {
-        Player byId = new Player(0, "username", "password", 0, 0, 0);
+        Player byId = new Player(0, "username", "password", 0, 0, 0, "false");
         when(playerRepository.getPlayerById(0)).thenReturn(byId);
 
         Player result = playerService.getPlayerById(0);
@@ -59,7 +59,7 @@ class PlayerServiceTest {
 
     @Test
     void testGetPlayerByName() {
-        Player byName = new Player(0, "test", "password", 0, 0, 0);
+        Player byName = new Player(0, "test", "password", 0, 0, 0, "false");
         when(playerRepository.getPlayerByName("test")).thenReturn(byName);
 
         Player result = playerService.getPlayerByName("test");
@@ -69,9 +69,9 @@ class PlayerServiceTest {
     @Test
     void testGetPlayersByWins() {
         List<Player> byWins = Arrays.asList(
-                new Player(0, "username", "password", 0, 0, 0),
-                new Player(1, "username", "password", 0, 0, 0),
-                new Player(2, "username", "password", 0, 0, 0)
+                new Player(0, "username", "password", 0, 0, 0, "false"),
+                new Player(1, "username", "password", 0, 0, 0, "false"),
+                new Player(2, "username", "password", 0, 0, 0, "false")
         );
         when(playerRepository.getPlayersByWins()).thenReturn(byWins);
 
@@ -81,23 +81,23 @@ class PlayerServiceTest {
 
     @Test
     void testCreatePlayer() {
-        Player saved = new Player(0, "username", "password", 0, 0, 0);
+        Player saved = new Player(0, "username", "password", 0, 0, 0, "false");
         when(playerRepository.save(any())).thenReturn(saved);
 
         Player result = playerService.createPlayer(
-                new Player(0, "username", "password", 0, 0, 0)
+                new Player(0, "username", "password", 0, 0, 0, "false")
         );
         Assertions.assertEquals(saved, result);
     }
 
     @Test
     void testUpdatePlayer() {
-        Player updated = new Player(0, "test", "password", 0, 0, 0);
+        Player updated = new Player(0, "test", "password", 0, 0, 0, "false");
         when(playerRepository.getPlayerById(0)).thenReturn(updated);
         when(playerRepository.save(any())).thenReturn(updated);
 
         Player result = playerService.updatePlayer(0,
-                new Player(0, "username", "password", 0, 0, 0)
+                new Player(0, "username", "password", 0, 0, 0, "false")
         );
         Assertions.assertEquals(updated, result);
     }
@@ -109,7 +109,7 @@ class PlayerServiceTest {
         when(playerRepository.save(any())).thenReturn(updated);
 
         Player result = playerService.updatePlayer(0,
-                new Player(0, "username", "password", 0, 0, 0)
+                new Player(0, "username", "password", 0, 0, 0, "false")
         );
         Assertions.assertEquals(updated, result);
     }
@@ -126,10 +126,10 @@ class PlayerServiceTest {
                 new Card(1, "test1", 0, "test1", 1));
         PlayerDeck saved = new PlayerDeck(0,
                 new Card(0, "card_name",0, "image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0));
+                new Player(0, "username", "password", 0, 0, 0, "false"));
         OwnedCards ownedCards = new OwnedCards(0,
                 new Card(0, "card_name", 0,"image_url", 0),
-                new Player(0, "username", "password", 0, 0, 0),
+                new Player(0, "username", "password", 0, 0, 0, "false"),
                 0);
         when(cardRepository.getAllCards()).thenReturn(allCards);
         when(deckService.saveDeck(any())).thenReturn(saved);
@@ -137,6 +137,6 @@ class PlayerServiceTest {
         when(ownedCardsService.updateCard(any())).thenReturn(ownedCards);
 
         playerService.populateDeck(new Player(0, "username",
-                "password", 0, 0, 0));
+                "password", 0, 0, 0, "false"));
     }
 }
