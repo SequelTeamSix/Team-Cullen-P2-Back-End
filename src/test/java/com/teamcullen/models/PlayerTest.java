@@ -37,6 +37,11 @@ class PlayerTest {
     }
 
     @Test
+    void testSetHas_logged_in() {
+        player.setHas_logged_in("false");
+    }
+
+    @Test
     void testEquals() {
         boolean result = player.equals(new Player(0, "username", "password", 0, 0, 0, "false"));
         Assertions.assertTrue(result);
@@ -52,6 +57,6 @@ class PlayerTest {
     void testToString() {
         String result = player.toString();
         Assertions.assertEquals("Player(player_id=0, username=username, " +
-                "password=password, points=0, wins=0, loses=0)", result);
+                "password=password, points=0, wins=0, loses=0, has_logged_in='false')", result);
     }
 }
