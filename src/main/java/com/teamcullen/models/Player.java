@@ -37,5 +37,5 @@ public class Player {
     private int loses;
 
     @Column(name = "has_logged_in")
-    private String has_logged_in;
+    private String has_logged_in = "false";
 }
