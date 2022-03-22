@@ -39,7 +39,7 @@ class OwnedCardsTest {
     @Test
     void testHashCode() {
         int result = ownedCards.hashCode();
-        Assertions.assertEquals(2005190211, result);
+        Assertions.assertEquals(-725650398, result);
     }
 
     @Test
@@ -47,6 +47,6 @@ class OwnedCardsTest {
         String result = ownedCards.toString();
         Assertions.assertEquals("OwnedCards(set_id=0, card=Card(card_id=0, card_name=card_name, power=0, " +
                 "image_url=image_url, rarity=0), player=Player(player_id=0, username=username, password=password, " +
-                "points=0, wins=0, loses=0), quantitiy=0)", result);
+                "points=0, wins=0, loses=0, has_logged_in=false), quantitiy=0)", result);
     }
 }
