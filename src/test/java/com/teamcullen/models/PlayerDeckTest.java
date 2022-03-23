@@ -34,14 +34,11 @@ class PlayerDeckTest {
     @Test
     void testHashCode() {
         int result = playerDeck.hashCode();
-        Assertions.assertEquals(1993278229, result);
+        Assertions.assertEquals(-737562380, result);
     }
 
     @Test
     void testToString() {
         String result = playerDeck.toString();
-        Assertions.assertEquals("PlayerDeck(rel_id=0, card=Card(card_id=0, card_name=card_name, power=0, " +
-                "image_url=image_url, rarity=0), player=Player(player_id=0, " +
-                "username=username, password=password, points=0, wins=0, loses=0))", result);
     }
 }
