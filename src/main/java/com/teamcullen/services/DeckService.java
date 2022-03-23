@@ -26,7 +26,7 @@ public class DeckService {
     }
 
 
-
+    //old
     public PlayerDeck updateDeck(int rel_id, PlayerDeck playerDeck){
 
         PlayerDeck dbDeck = deckRepository.getById(rel_id);
@@ -34,6 +34,16 @@ public class DeckService {
            return deckRepository.save(playerDeck);
         }
         return null;
+    }
+    //new
+    public PlayerDeck update(PlayerDeck playerDeck){
+
+        PlayerDeck dbDeck = deckRepository.getById(playerDeck.getRel_id());
+        if(dbDeck != null){
+            return deckRepository.save(playerDeck);
+        }
+        return null;
+
     }
 
     public List<PlayerDeck> getAllDecks(){
