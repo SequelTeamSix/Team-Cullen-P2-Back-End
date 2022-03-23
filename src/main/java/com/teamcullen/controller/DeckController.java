@@ -55,12 +55,6 @@ public class DeckController {
         return deckService.updateDeck(rel_id, playerDeck);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping("/deck/update/new")
-    public PlayerDeck update(@RequestBody PlayerDeck playerDeck){
-
-        return deckService.update(playerDeck);
-    }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/deck/delete/{rel_id}")

@@ -50,13 +50,13 @@ class PlayerTest {
     @Test
     void testHashCode() {
         int result = player.hashCode();
-        Assertions.assertEquals(1950622070, result);
+        Assertions.assertEquals(-780218539, result);
     }
 
     @Test
     void testToString() {
         String result = player.toString();
         Assertions.assertEquals("Player(player_id=0, username=username, " +
-                "password=password, points=0, wins=0, loses=0, has_logged_in='false')", result);
+                "password=password, points=0, wins=0, loses=0, has_logged_in=false)", result);
     }
 }
