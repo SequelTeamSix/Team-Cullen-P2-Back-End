@@ -12,53 +12,61 @@ import java.util.List;
 
 @RestController
 public class OwnedCardsController {
-
     OwnedCardsService ownedCardsService;
 
     @Autowired
     public OwnedCardsController(OwnedCardsService ownedCardsService){
-
         this.ownedCardsService = ownedCardsService;
     }
 
-
-    //returns list of all cards owned by players
+    /**
+     * {@link OwnedCardsService#getAllCards()}
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/ownedcards")
     public List<OwnedCards> getAllCards(){return ownedCardsService.getAllCards();}
 
-
-    //gets single card based on given set_id
+    /**
+     * {@link OwnedCardsService#getCardById(int)}
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/ownedcards/id/{set_id}")
     public OwnedCards getCardById(@PathVariable int set_id){return ownedCardsService.getCardById(set_id);}
 
-    //gets single card based on given card_id
+    /**
+     * {@link OwnedCardsService#getCardByCardId(int)}
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/ownedcards/card_id/{card_id}")
     public OwnedCards getCardByCardId(@PathVariable int card_id){return ownedCardsService.getCardByCardId(card_id);}
 
-    //gets all cards owned by a player of given player_id
+    /**
+     * {@link OwnedCardsService#getPlayerCardsById(int)}
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/ownedcards/player/{player_id}")
     public List<OwnedCards> getPlayerCardsById(@PathVariable int player_id){return ownedCardsService.getPlayerCardsById(player_id);}
 
+    /**
+     * {@link OwnedCardsService#addCard(OwnedCards)}
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/ownedcards/add")
     public OwnedCards addCard(@RequestBody OwnedCards ownedCards){ return ownedCardsService.addCard(ownedCards);}
 
+    /**
+     * {@link OwnedCardsService#updateCard(OwnedCards)}
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/ownedcards/update")
     public OwnedCards updateCard( @RequestBody OwnedCards ownedCards){
-
         return ownedCardsService.updateCard( ownedCards);
     }
 
-
+    /**
+     * {@link OwnedCardsService#deleteById(int)}
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/ownedcards/delete/{set_id}")
     public void deleteById(@PathVariable int set_id){ownedCardsService.deleteById(set_id);}
-
-
-
 }
