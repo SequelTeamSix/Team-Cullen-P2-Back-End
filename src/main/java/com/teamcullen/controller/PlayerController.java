@@ -20,7 +20,7 @@ public class PlayerController {
     /**
      * {@link PlayerService#getAllPlayers()}
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @GetMapping("/player")
     public List<Player> getAllPlayers() {
         return playerService.getAllPlayers();
@@ -29,7 +29,7 @@ public class PlayerController {
     /**
      * {@link PlayerService#getPlayerById(int)}
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @GetMapping ("/player/id/{player_id}")
     public Player getPlayerById(@PathVariable int player_id) {
         return playerService.getPlayerById(player_id);
@@ -38,7 +38,7 @@ public class PlayerController {
     /**
      * {@link PlayerService#getPlayerByName(String)}
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @GetMapping("/player/name/{username}")
     public Player getPlayerByName(@PathVariable String username) {
         return playerService.getPlayerByName(username);
@@ -47,7 +47,7 @@ public class PlayerController {
     /**
      * {@link PlayerService#getPlayersByWins()}
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @GetMapping("/player/leaderboard")
     public List<Player> getPlayersByWins() {
         return playerService.getPlayersByWins();
@@ -56,7 +56,7 @@ public class PlayerController {
     /**
      * {@link PlayerService#createPlayer(Player)}
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @PostMapping("/player/add")
     public Player createPlayer(@RequestBody Player player) {
         playerService.populateDeck(playerService.createPlayer(player));
@@ -66,7 +66,7 @@ public class PlayerController {
     /**
      * {@link PlayerService#updatePlayer(int, Player)}
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @PutMapping("/player/update/{player_id}")
     public Player updatePlayer(@PathVariable int player_id, @RequestBody Player player){
         return playerService.updatePlayer(player_id, player);
@@ -75,7 +75,7 @@ public class PlayerController {
     /**
      * {@link PlayerService#deletePlayerById(int)}
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @DeleteMapping("/player/delete/{player_id}")
     public void deletePlayerById(@PathVariable int player_id) {
          playerService.deletePlayerById(player_id);
