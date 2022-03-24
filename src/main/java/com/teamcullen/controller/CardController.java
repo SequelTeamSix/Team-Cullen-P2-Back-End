@@ -20,7 +20,7 @@ public class CardController {
     /**
      * {@link CardService#getCardByName(String)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/card/name/{card_name}")
     public Card getCardByName(@PathVariable String card_name) {
         return cardService.getCardByName(card_name);
@@ -29,7 +29,7 @@ public class CardController {
     /**
      * {@link CardService#getCardById(int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/card/id/{card_id}")
     public Card getCardById(@PathVariable int card_id) {
         return cardService.getCardById(card_id);
@@ -38,7 +38,7 @@ public class CardController {
     /**
      * {@link CardService#getAllCards()}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/card")
     public List<Card> getAllCards() {
         return cardService.getAllCards();
@@ -47,7 +47,7 @@ public class CardController {
     /**
      * {@link CardService#getAllCardsByRarity(int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/card/rarity/{rarity}")
     public List<Card> getAllCardsByRarity(@PathVariable int rarity) {
         return cardService.getAllCardsByRarity(rarity);
@@ -56,7 +56,7 @@ public class CardController {
     /**
      * {@link CardService#getAllCardsByPower(int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/card/power/{power}")
     public List<Card> getAllCardsByPower(@PathVariable int power) {
         return cardService.getAllCardsByPower(power);
@@ -65,7 +65,7 @@ public class CardController {
     /**
      * {@link CardService#getAllCardsBetweenPowerLevels(int, int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("card/power/{power_low}/{power_high}")
     public List<Card> getAllCardsBetweenPowerLevels(@PathVariable int power_low, @PathVariable int power_high) {
         return cardService.getAllCardsBetweenPowerLevels(power_low, power_high);
@@ -74,7 +74,7 @@ public class CardController {
     /**
      * {@link CardService#saveCard(Card)} (Card)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @PostMapping("/card/add")
     public Card postCard(@RequestBody Card card) {
         return cardService.saveCard(card);
@@ -83,7 +83,7 @@ public class CardController {
     /**
      * {@link CardService#deleteCardById(int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @DeleteMapping("/card/delete/{card_id}")
     public int deleteCardById(@PathVariable int card_id) {
         return cardService.deleteCardById(card_id);
@@ -92,7 +92,7 @@ public class CardController {
     /**
      * {@link CardService#updateCard(int, Card)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @PutMapping("/card/update/{card_id}")
     public Card updateCardById(@PathVariable int card_id, @RequestBody Card card) {
         return cardService.updateCard(card_id, card);

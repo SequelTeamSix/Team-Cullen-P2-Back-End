@@ -22,42 +22,42 @@ public class OwnedCardsController {
     /**
      * {@link OwnedCardsService#getAllCards()}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/ownedcards")
     public List<OwnedCards> getAllCards(){return ownedCardsService.getAllCards();}
 
     /**
      * {@link OwnedCardsService#getCardById(int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/ownedcards/id/{set_id}")
     public OwnedCards getCardById(@PathVariable int set_id){return ownedCardsService.getCardById(set_id);}
 
     /**
      * {@link OwnedCardsService#getCardByCardId(int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @GetMapping("/ownedcards/card_id/{card_id}")
     public OwnedCards getCardByCardId(@PathVariable int card_id){return ownedCardsService.getCardByCardId(card_id);}
 
     /**
      * {@link OwnedCardsService#getPlayerCardsById(int)}
      */
-    @CrossOrigin()
-    @GetMapping()
+    @CrossOrigin
+    @GetMapping("/ownedcards/player/{player_id}")
     public List<OwnedCards> getPlayerCardsById(@PathVariable int player_id){return ownedCardsService.getPlayerCardsById(player_id);}
 
     /**
      * {@link OwnedCardsService#addCard(OwnedCards)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @PostMapping("/ownedcards/add")
     public OwnedCards addCard(@RequestBody OwnedCards ownedCards){ return ownedCardsService.addCard(ownedCards);}
 
     /**
      * {@link OwnedCardsService#updateCard(OwnedCards)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @PutMapping("/ownedcards/update")
     public OwnedCards updateCard( @RequestBody OwnedCards ownedCards){
         return ownedCardsService.updateCard( ownedCards);
@@ -66,7 +66,7 @@ public class OwnedCardsController {
     /**
      * {@link OwnedCardsService#deleteById(int)}
      */
-    @CrossOrigin()
+    @CrossOrigin
     @DeleteMapping("/ownedcards/delete/{set_id}")
     public void deleteById(@PathVariable int set_id){ownedCardsService.deleteById(set_id);}
 }
